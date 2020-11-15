@@ -1,0 +1,9 @@
+{
+  "name": "enemio",
+  "version": "1.0.0",
+  "description": "https://enem.io",
+  "main": "./server/build/index.js",
+  "repository": "https://github.com/gabrielpetersson/enemio.git",
+  "author": "Gabriel Petersson <gabriielpetersson@gmail.com>",
+  "license": "MIT"
+}
