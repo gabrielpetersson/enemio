@@ -6,7 +6,7 @@ import { createRequire } from "module"
 const require = createRequire(import.meta.url)
 
 const src = "./src/**/*.ts"
-const out = "./build"
+const out = "../server/build/public"
 const project = typescript.createProject("tsconfig.json", {
   outDir: out,
   typescript: require("typescript")
