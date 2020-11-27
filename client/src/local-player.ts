@@ -123,7 +123,7 @@ export class LocalPlayer implements IPlayer {
     })
     if (!directions.length) {
       this.stopWalking()
-      this.sendPosition()
+      // this.sendPosition()
       return
     }
     // player might hold more than 2 buttons, take most recent and combine it with its closest neighbour
