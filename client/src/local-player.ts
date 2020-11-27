@@ -122,7 +122,6 @@ export class LocalPlayer implements IPlayer {
       }
     })
     if (!directions.length) {
-      this.stopWalking()
       // this.sendPosition()
       return
     }
