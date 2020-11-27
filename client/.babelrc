@@ -1,3 +1,21 @@
 {
-  "presets": ["es2015"]
+  "presets": [
+    ["@babel/preset-env",
+    { 
+      "modules": false
+    }]
+  ],
+  "plugins": [
+    [
+      "file-loader",
+      {
+        "name": "[hash].[ext]",
+        "extensions": ["webp"],
+        "publicPath": "images",
+        "outputPath": "public/images",
+        "context": "",
+        "limit": 10  
+      }
+    ]
+  ]
 }

@@ -1,9 +1,22 @@
 {
+  "private": true,
   "name": "enemio",
+  "workspaces": ["client", "server"],
+  "packages": [
+    "client",
+    "server",
+    "shared"
+], 
   "version": "1.0.0",
   "description": "https://enem.io",
-  "main": "./server/build/index.js",
+  "main": "./client/public/index.js",
   "repository": "https://github.com/gabrielpetersson/enemio.git",
   "author": "Gabriel Petersson <gabriielpetersson@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "be:start": "concurrently -n typescript,backend \" yarn workspace server backend:watch\"  \" yarn workspace server backend:run\"",
+    "fe:watch": "yarn workspace client frontend:watch",
+    "fe:start": "concurrently -n typescript,frontend \" yarn workspace client frontend:watch\" \" yarn workspace client frontend:run\" ",
+    "start": "concurrently -n backend,frontend \" yarn be:start\"  \" yarn fe:watch\""
+  }
 }

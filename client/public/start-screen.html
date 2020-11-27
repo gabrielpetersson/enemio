@@ -1,0 +1,212 @@
+<div id="start-screen-container">
+  <style>
+    #start-screen-container {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #f0f0f0;
+      z-index: 1000000;
+      flex-direction: column;
+    }
+    #change-binding-overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100000;
+    }
+    #exit-set-key-button {
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      font-size: 14px;
+      background-color: white;
+      border-radius: 10px;
+      position: absolute;
+      left: 30px;
+      top: 30px;
+    }
+    #set-key-grid {
+      display: grid;
+      grid-template-rows: 56px;
+      grid-template-columns: 1fr 56px;
+      width: 250px;
+    }
+    #set-key-text {
+      font-size: 14px;
+      grid-column: 1/2;
+      grid-row: 1/2;
+      color: #f0f0f0;
+      display: flex;
+      align-items: center;
+    }
+    .change-binding-button {
+      border: solid 3px #f0f0f0;
+      border-radius: 5px;
+      color: #f0f0f0;
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      position: relative;
+      background: rgba(0, 0, 0, 0.5);
+      grid-row: 1/2;
+      grid-column: 2/3;
+    }
+    #enter-name-input {
+      margin-top: 10px;
+      outline: none;
+      border: none;
+      border-radius: 2px;
+      height: 20px;
+      padding: 3px;
+    }
+    #click-to-start-wrapper {
+      height: 70px;
+    }
+    #start-game-loader {
+      margin-top: 30px;
+      width: 60px;
+      height: auto;
+      display: none;
+    }
+    #start-game-button {
+      margin-top: 30px;
+      cursor: pointer;
+      font-weight: 500;
+      padding: 8px 20px;
+      background: orange;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.2);
+      background-image: url("/images/84e9a42f9e78941d7b8e0c70fe5a06f2.webp");
+    }
+    #change-binding-container {
+      position: absolute;
+      left: 100px;
+      bottom: 100px;
+      display: grid;
+      grid-auto-rows: 42px;
+      grid-template-columns: repeat(7, 1fr);
+      grid-gap: 8px;
+      width: 360px;
+    }
+    #change-binding-text {
+      font-size: 14px;
+      grid-column: 1/2;
+      grid-row: 1/2;
+      color: #f0f0f0;
+      display: flex;
+      align-items: center;
+      margin-right: 5px;
+    }
+    .space-button {
+      position: absolute;
+      height: 42px;
+      box-sizing: border-box;
+      right: -40px;
+      top: 0;
+      transform: translateX(100%);
+      width: 180px;
+    }
+    #change-binding-info {
+      color: #f0f0f0;
+      font-size: 12px;
+      font-weight: 700;
+      grid-column: 1/4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-wrap: none;
+    }
+    .dynamic-text-margin {
+      margin-left: 5px;
+    }
+    #enemio-logo-start-screen {
+      width: 350px;
+      height: auto;
+
+      margin-bottom: 100px;
+      animation-name: pulsating;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease-in-out;
+    }
+  </style>
+  <div id="change-binding-overlay">
+    <div id="exit-set-key-button">x</div>
+    <div id="set-key-grid">
+      <div id="change-binding-text">
+        Change keybinding for
+        <span class="dynamic-text-margin dynamic-text"></span>:
+      </div>
+      <div class="change-binding-button change">
+        <span class="dynamic-text"></span>
+      </div>
+    </div>
+  </div>
+  <img id="enemio-logo-start-screen" src="/images/ENEMIO3.png" />
+  Enter your name
+  <input id="enter-name-input" type="text" autofocus />
+  <div id="click-to-start-wrapper">
+    <img id="start-game-loader" src="images/bbc022f6.svg" />
+    <div id="start-game-button">CLICK TO START</div>
+  </div>
+  <div id="change-binding-container">
+    <div id="change-binding-info" style="grid-column: 1/8; grid-row: 1/2">
+      CLICK TO CHANGE KEY BINDING
+    </div>
+    <div class="grid-filler"></div>
+    <div
+      class="change-binding-button up"
+      style="grid-row: 2/3; grid-column: 2/3"
+    >
+      <span class="dynamic-text"></span>
+    </div>
+    <div class="grid-filler"></div>
+    <div
+      class="change-binding-button left"
+      style="grid-row: 3/4; grid-column: 1/2"
+    >
+      <span class="dynamic-text"></span>
+    </div>
+    <div
+      class="change-binding-button down"
+      style="grid-row: 3/4; grid-column: 2/3"
+    >
+      <span class="dynamic-text"></span>
+    </div>
+    <div
+      class="change-binding-button right"
+      style="grid-row: 3/4; grid-column: 3/4"
+    >
+      <span class="dynamic-text"></span>
+    </div>
+    <div
+      class="change-binding-button space-button shoot"
+      style="grid-row: 3/4; grid-column: 3/4"
+    >
+      <span class="dynamic-text"></span>
+    </div>
+  </div>
+</div>

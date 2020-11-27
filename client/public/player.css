@@ -1,0 +1,81 @@
+.player {
+  position: absolute;
+}
+
+.player-body {
+  width: 35px;
+  height: 16px;
+  background: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-head {
+  width: 12px;
+  height: 12px;
+  background: #1c1c1c;
+}
+
+.player-gun {
+  position: absolute;
+  transform: translateY(-100%);
+  top: 0;
+  left: 23px;
+  width: 3.5px;
+  height: 9px;
+  background: darkgrey;
+}
+
+.player-bullet {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  height: 300px;
+  transform: translate(-50%, -100%);
+  width: 1px;
+  opacity: 0;
+  background: white;
+}
+
+.kill-display {
+  font-size: 10px;
+  color: red;
+  position: absolute;
+  left: -5px;
+  top: 0;
+  transform: translate(-100%, -34%);
+}
+
+.player-name {
+  font-size: 10px;
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: -5px;
+  transform: translate(-50%, -100%);
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 3px 5px;
+  line-break: none;
+}
+
+.hp-wrapper {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hp-container {
+  width: 48px;
+  height: 5px;
+  border: solid 1px grey;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.hp-health {
+  width: 100%;
+  height: 100%;
+  background: red;
+}
